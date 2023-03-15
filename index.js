@@ -10,7 +10,7 @@ import { initReservation } from "./pages/reservation/reserve.js"
 import { initMembers } from "./pages/members/members.js"
 import { initCars } from "./pages/cars/cars.js"
 import { initAddCar } from "./pages/addCar/addCar.js"
-import { initLogin } from "./pages/login/login.js"
+import { initLogin,logout } from "./pages/login/login.js"
 import { initSignup } from "./pages/signup/signup.js"
 import { initFindEditCar } from "./pages/findEditCar/findEditCar.js"
 import { initListReservationsAll } from "./pages/showReservations/reservations.js"
@@ -77,9 +77,12 @@ window.addEventListener("load", async () => {
         renderTemplate(templateSignup, "content")
         initSignup()
       },
-      "/login": (match) => {
+      "/login": () => {
         renderTemplate(templateLogin, "content")
         initLogin()
+      },
+      "/logout": () => {
+        logout()
       }
     })
     .notFound(() => {
